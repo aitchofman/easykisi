@@ -1,0 +1,11 @@
+email: nils.hofmann@live.de
+fullname: 'Nils Hofmann'
+title: Administrator
+state: enabled
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$050BH1IyaIB8WPvzVPyLHO54sz7d7ivVCmZ6GEXJJxXj/4Ygt9JEi

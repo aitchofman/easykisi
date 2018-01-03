@@ -1,0 +1,32 @@
+
+
+
+
+
+
+
+
+
+enabled: true
+text_var: 'Custom Text added by the **Git Sync** plugin (disable plugin to remove)'
+folders:
+  - pages
+  - accounts
+  - config
+  - data
+  - plugins
+  - themes
+repository: 'https://github.com/aitchofman/easykisi.git'
+user: aitchofman
+password: gitsync-def50200a5169ac77ff805be86dd52934048263c7660ce6104f29afed2eb348fab0e5177887129c4a8b87cca7616711f392662806c1f311050dbbc7d10a018208718933d11563777819f942924a45a54f365cd5b72180a3c49521981b64aa8
+webhook: /_git-sync
+branch: master
+remote:
+  name: origin
+  branch: master
+git:
+  author: gituser
+  name: GitSync
+  email: git-sync@trilby.media
+  bin: git
+logging: false
