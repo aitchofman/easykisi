@@ -1,6 +1,5 @@
 ---
 menu: Musik
-titel: Soundcloud
 ---
 
 # Why do we use it?  
