@@ -14,9 +14,9 @@
     <link rel="canonical" href="{{ page.url(true, true) }}" />
 
     {% block stylesheets %}
-        {% do assets.addCss('https://unpkg.com/purecss@1.0.0/build/pure-min.css', 100) %}
-        {% do assets.addCss('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', 99) %}
-        {% do assets.addCss('theme://css/custom.css', 98) %}
+        {% do assets.addCss('theme://css/reset.css', 97) %}
+        {% do assets.addCss('theme://css/bootstrap.min.css', 98) %}
+        {% do assets.addCss('theme://css/custom.css', 99) %}
     {% endblock %}
     {{ assets.css() }}
 
@@ -30,9 +30,9 @@
 <body id="top" class="{{ page.header.body_classes }}">
 
 {% block header %}
-    <div class="header">
-        <div class="wrapper padding">
-            <a class="logo left" href="{{ base_url == '' ? '/' : base_url }}">
+    <div class="">
+        <div class="">
+            <a class="" href="{{ base_url == '' ? '/' : base_url }}">
                 <i class="fa fa-rebel"></i>
                 {{ config.site.title }}
             </a>
@@ -62,7 +62,7 @@
 {% endblock %}
 
 {% block bottom %}
-    {{ assets.js('bottom') }}
+    {{ assets.js('theme://js/bootstrap.min.js') }}
 {% endblock %}
 
 </body>
