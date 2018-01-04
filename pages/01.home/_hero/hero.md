@@ -1,6 +1,5 @@
 ---
 title: Hero
-image_align: right
 ---
 
 ## Content Unchained
