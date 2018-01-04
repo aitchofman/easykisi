@@ -1,0 +1,14 @@
+title: 'Easy Kisi'
+default_lang: de
+author:
+  name: 'Mr Kisi'
+  email: kontakt@easy-kisi.de
+metadata:
+  description: 'Eine Webseite für den legendären Easy Kisi!'
+summary:
+  enabled: false
+  format: short
+  size: 300
+  delimiter: '==='
+blog:
+  route: /blog
