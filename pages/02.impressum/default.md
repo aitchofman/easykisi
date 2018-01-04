@@ -1,5 +1,6 @@
 ---
 title: Impressum
+visible: false
 ---
 
 # Grav is Running!
