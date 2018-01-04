@@ -1,14 +1,7 @@
-title: 'Easy Kisi'
-default_lang: de
+title: Grav
 author:
-  name: 'Mr Kisi'
-  email: kontakt@easy-kisi.de
+  name: Joe Bloggs
+  email: 'joe@test.com'
 metadata:
-  description: 'Eine Webseite für den legendären Easy Kisi!'
-summary:
-  enabled: false
-  format: short
-  size: 300
-  delimiter: '==='
-blog:
-  route: /blog
+    description: 'Grav is an easy to use, yet powerful, open source flat-file CMS'
+

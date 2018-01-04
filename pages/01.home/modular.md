@@ -9,4 +9,5 @@ content:
         dir: asc
         custom:
             - _hero
+            - _instagram
 ---
