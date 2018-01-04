@@ -10,4 +10,6 @@ content:
         custom:
             - _hero
             - _instagram
+            - _dates
+            - _soundcloud
 ---
