@@ -29,6 +29,10 @@
 </head>
 <body id="top" class="{{ page.header.body_classes }}">
 
+{% block hero %}
+    {% include 'partials/hero.html.twig' %}
+{% endblock hero %}
+    
 {% block header %}
     <nav class="container-fluid">
         <div class="">
