@@ -8,8 +8,8 @@ content:
         by: default
         dir: asc
         custom:
-            - _hero
+            - _history
             - _instagram
-            - _dates
             - _soundcloud
+            - _dates
 ---
