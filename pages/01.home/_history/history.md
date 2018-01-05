@@ -1,5 +1,5 @@
 ---
-title: Hero
+title: Geschichte
 ---
 
 ## Content Unchained
