@@ -36,10 +36,11 @@
                 </button>
                 <div class="collapse navbar-collapse text-center justify-content-center" id="navbar2SupportedContent">
                     <ul class="navbar-nav">
-                        {% for mitem in site.menu %}
-                            <li class="nav-item">
-                                <a class="nav-link text-dark text-uppercase" href="{{ mitem.url }}">
-                                    {{ mitem.text }}
+                        {% for module in page.collection() %}
+                            {% set current_module = (module.active or module.activeChild) ? 'active' : '' %}
+                            <li class="{{ current_module }} nav-item">
+                                <a href="#{{ _self.pageLinkName(module.menu) }}" class="nav-link text-dark text-uppercase">
+                                    {{ module.menu }}
                                 </a>
                             </li>
                         {% endfor %}
