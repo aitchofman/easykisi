@@ -7,6 +7,16 @@
   background-size: cover;
 }
 
+#instagram {
+  background-color: #348afc;
+}
+
+#history {
+  background: url(/user/themes/easykisi/images/soundcloud.svg) no-repeat center center;
+  height: 65vw;
+  background-size: cover;
+}
+
 #history {
   background: url(/user/themes/easykisi/images/history.svg) no-repeat center center;
   height: 65vw;
