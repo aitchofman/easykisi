@@ -1,0 +1,18 @@
+{% if feed %}
+
+<div class="container-fluid">
+    <div class="row">
+        {% for item in feed|slice(0, count) %}
+        <div class="col-sm">
+            <a href="{{ item.link }}" target="_blank">
+                <img src="{{ item.images.thumbnail.url }}" alt="">
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% else %}
+<p>
+    Could not load the Instagram feed!
+</p>
+{% endif %}
