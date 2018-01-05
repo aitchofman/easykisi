@@ -17,8 +17,8 @@
   background-size: cover;
 }
 
-#dates {
-  background-image: url(/user/themes/easykisi/images/dates.svg);
+#history {
+  background-image: url(/user/themes/easykisi/images/history.svg);
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: center;
@@ -26,7 +26,7 @@
   background-size: cover;
 }
 
-#history {
+#openair {
   background: url(/user/themes/easykisi/images/history.svg) no-repeat center center;
   height: 65vw;
   background-size: cover;

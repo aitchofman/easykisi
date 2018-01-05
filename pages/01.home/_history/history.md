@@ -1,5 +1,5 @@
 ---
-title: Geschichte
+title: Date
 ---
 
 ## Content Unchained

@@ -8,8 +8,8 @@ content:
         by: default
         dir: asc
         custom:
-            - _history
+            - _openair
             - _instagram
-            - _dates
+            - _history
             - _soundcloud
 ---
