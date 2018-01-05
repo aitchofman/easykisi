@@ -12,4 +12,13 @@
   height: 65vw;
   background-size: cover;
 }
+
+#footer {
+  background-image: url(user/themes/easykisi/images/footer.svg);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+  height: 65vw;
+  background-size: cover;
+}
 /*# sourceMappingURL=style.css.map */
