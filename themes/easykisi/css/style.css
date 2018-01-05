@@ -1,5 +1,5 @@
 #kisi {
-  background-image: url(user/themes/easykisi/images/hero.svg);
+  background-image: url(/user/themes/easykisi/images/hero.svg);
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: center;
@@ -8,13 +8,13 @@
 }
 
 #history {
-  background: url(./images/history.svg) no-repeat center center;
+  background: url(/user/themes/easykisi/images/history.svg) no-repeat center center;
   height: 65vw;
   background-size: cover;
 }
 
 #footer {
-  background-image: url(user/themes/easykisi/images/footer.svg);
+  background-image: url(/user/themes/easykisi/images/footer.svg);
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: center;
