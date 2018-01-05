@@ -28,20 +28,25 @@
 
 {% block header_navigation %}
     {% if show_onpage_menu %}
-        <ul class="navigation">
-        {% for module in page.collection() %}
-            {% set current_module = (module.active or module.activeChild) ? 'active' : '' %}
-            <li class="{{ current_module }}"><a href="#{{ _self.pageLinkName(module.menu) }}">{{ module.menu }}</a></li>
-        {% endfor %}
-        {% for mitem in site.menu %}
-            <li>
-                <a {% if mitem.class %}class="{{ mitem.class }}"{% endif %} href="{{ mitem.url }}">
-                    {% if mitem.icon %}<i class="fa fa-{{ mitem.icon }}"></i>{% endif %}
-                    {{ mitem.text }}
-                </a>
-            </li>
-        {% endfor %}
-        </ul>
+    <nav class="navbar navbar-expand-md bg-light navbar-dark">
+            <div class="container">
+                <button class="navbar-toggler navbar-toggler-right text-dark" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent"
+                    aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse text-center justify-content-center" id="navbar2SupportedContent">
+                    <ul class="navbar-nav">
+                        {% for mitem in site.menu %}
+                            <li class="nav-item">
+                                <a class="nav-link text-dark text-uppercase" href="{{ mitem.url }}">
+                                    {{ mitem.text }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
     {% else %}
         {{  parent() }}
     {% endif %}
