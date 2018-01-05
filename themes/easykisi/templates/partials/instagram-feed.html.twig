@@ -5,7 +5,7 @@
         {% for item in feed|slice(0, count) %}
         <div class="col-sm-2 col-md-4 col-lg-5 col-xl-5">
             <a href="{{ item.link }}" target="_blank">
-                <img src="{{ item.images.thumbnail.resize(400, 400).html }}" alt="">
+                <img src="{{ item.images.resize(400, 400).url }}" alt="">
             </a>
         </div>
         {% endfor %}
