@@ -10,6 +10,6 @@ content:
         custom:
             - _openair
             - _instagram
-            - _history
             - _soundcloud
+            - _history
 ---
