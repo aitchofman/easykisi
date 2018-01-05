@@ -1,15 +1,12 @@
 {% if feed %}
-
-<div class="container-fluid">
-    <div class="row no-gutters">
-        {% for item in feed|slice(0, count) %}
-        <div class="col-sm-12 col-md-6 col-lg-3 col-xl-2">
-            <a href="{{ item.link }}" target="_blank">
-                <img class="img-fluid" src="{{ item.images.thumbnail.url }}" alt="">
-            </a>
-        </div>
-        {% endfor %}
+<div class="row no-gutters">
+    {% for item in feed|slice(0, count) %}
+    <div class="col-sm-12 col-md-6 col-lg-3 col-xl-2">
+        <a href="{{ item.link }}" target="_blank">
+            <img class="img-fluid" src="{{ item.images.thumbnail.url }}" alt="">
+        </a>
     </div>
+    {% endfor %}
 </div>
 {% else %}
 <p>
