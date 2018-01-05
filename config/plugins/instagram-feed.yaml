@@ -1,6 +1,6 @@
 enabled: true
 route: /
 instagram_feed:
-  count: '10'
+  count: '12'
   username: easykisi
   cache_expires: 3000
