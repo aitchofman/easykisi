@@ -1,3 +1,3 @@
 ---
-titel: Kontakt
+menu: Kontakt
 ---
