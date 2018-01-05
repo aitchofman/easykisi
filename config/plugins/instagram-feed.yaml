@@ -3,4 +3,4 @@ route: /
 instagram_feed:
   count: '10'
   username: easykisi
-  cache_expires: 30000
+  cache_expires: 3000
