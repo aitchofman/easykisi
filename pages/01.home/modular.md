@@ -10,6 +10,6 @@ content:
         custom:
             - _history
             - _instagram
-            - _soundcloud
             - _dates
+            - _soundcloud
 ---
