@@ -1,0 +1,6 @@
+enabled: true
+route: /
+instagram_feed:
+  count: '10'
+  username: aitchofman
+  cache_expires: 3000
