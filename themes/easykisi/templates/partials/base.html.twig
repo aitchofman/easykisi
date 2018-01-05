@@ -34,18 +34,10 @@
 {% endblock hero %}
     
 {% block header %}
-    <nav class="container-fluid">
-        <div class="">
-            <a class="" href="{{ base_url == '' ? '/' : base_url }}">
-                <i class="fa fa-rebel"></i>
-                {{ config.site.title }}
-            </a>
-            {% block header_navigation %}
-            <nav class="main-nav">
-                {% include 'partials/navigation.html.twig' %}
-            </nav>
-            {% endblock %}
-        </div>
+    <nav class="main-nav container-fluid px-0">
+        {% block header_navigation %}
+            {% include 'partials/navigation.html.twig' %}
+        {% endblock %}
     </nav>
 {% endblock %}
 
