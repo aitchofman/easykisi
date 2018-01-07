@@ -43,6 +43,10 @@
   height: 100%;
 }
 
+#openair svg .sun {
+  animation-delay: 4s;
+}
+
 #openair .container {
   position: absolute;
   top: 0px;
