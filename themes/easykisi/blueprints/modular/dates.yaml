@@ -4,21 +4,19 @@ title: Dates
 form:
   fields:
     tabs:
-      active: 1
       content:
          fields:
             header.dates:
-              name: features
+              name: Dates
               type: list
-              label: Dates
-
               fields:
-                .icon:
+                .titel:
                   type: text
-                  label: Icon
-                .header:
+                  label: Titel
+                .desription:
                   type: text
-                  label: Header
-                .text:
-                  type: text
-                  label: Text
+                  label: Beschreibung
+                .header.date:
+                  type: datetime
+                  label: Datum
+                  toggleable: true
