@@ -25,6 +25,7 @@
         {% do assets.addJs('jquery', 101) %}
         {% do assets.addJs('theme://js/bootstrap.min.js', 100) %}
         {% do assets.addJs('theme://js/ScrollMagic.min.js', 99) %}
+        {% do assets.addJs('theme://js/wow.min.js', 99) %}
     {% endblock %}
     {{ assets.js() }}
 {% endblock head%}
@@ -57,9 +58,14 @@
 {% endblock %}  #}
 
 {% block bottom %}
-    {{ assets.js('theme://js/bootstrap.min.js') }}
-    {{ assets.js('theme://js/ScrollMagic.min.js') }}
-    {{ assets.js('theme://js/wow.min.js') }}
+{{ assets.js('bottom') }}
+<script>
+$(function () {
+    $(document).ready(function() {
+        new WOW().init();
+    });
+});
+</script>
 {% endblock %}
 
 </body>
