@@ -4,39 +4,9 @@ title: Dates
 form:
   fields:
     tabs:
-      active: 3
-      fields:
-        advanced:
-          fields:
-            columns:
-              fields:
-                column1:
-                  fields:
-                    name:
-                      default: modular/dates
-                      '@data-options': '\Grav\Common\Page\Pages::modularTypes'
-            overrides:
-              fields:
-                header.template:
-                  default: modular/dates
-                  '@data-options': '\Grav\Common\Page\Pages::modularTypes'
-        content:
-          fields:
-            uploads:
-              label: Page Media (first one will be displayed next to your content)
-            header.image_align:
-              type: select
-              label: Image position
-              classes: fancy
-              default: left
-              options:
-                'left': 'Left'
-                'right': 'Right'
-        dates:
-          fields:
-            type: tab
-            title: Dates
-            fields:
+      active: 1
+      content:
+         fields:
             header.dates:
               name: features
               type: list
