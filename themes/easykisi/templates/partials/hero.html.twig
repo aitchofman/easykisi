@@ -275,7 +275,7 @@
         </defs>
         <title>kisi</title>
         <rect class="cls-2" x="-6" y="-13" width="1935" height="838" />
-        <g id="sun">
+        <g class="animated pulse infinite">
             <circle class="cls-3" cx="212.92" cy="207.76" r="158.11" />
             <circle class="cls-4" cx="212.92" cy="207.76" r="186.08" />
             <circle class="cls-5" cx="212.92" cy="207.76" r="130.78" />
@@ -698,13 +698,5 @@
     </div> #}
 </div>
 <script>
-        var controller = new ScrollMagic.Controller();
-// create a scene
-new ScrollMagic.Scene({
-    duration: 1000,    // the scene should last for a scroll distance of 100px
-    offset: 2        // start this scene after scrolling for 50px
-})
-.setPin("#sun") // pins the element for the the scene's duration
-.addTo(controller); // assign the scene to the controller
 
 </script>
