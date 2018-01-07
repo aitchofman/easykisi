@@ -2,6 +2,12 @@
   position: relative;
 }
 
+#kisi .tent {
+  visibility: visible;
+  animation-duration: 150ms;
+  animation-iteration-count: 1;
+}
+
 #kisi .box {
   visibility: visible;
   animation-duration: 1500ms;
