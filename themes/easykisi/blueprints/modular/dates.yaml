@@ -24,19 +24,8 @@ form:
                   toggleable: true
                   help: PLUGIN_ADMIN.DATE_HELP
                 .description:
-                  classes: frontmatter
-                  type: editor
-                  label: PLUGIN_ADMIN.FRONTMATTER
-                  autofocus: true
-                  codemirror:
-                    mode: 'yaml'
-                    indentUnit: 4
-                    autofocus: true
-                    indentWithTabs: false
-                    lineNumbers: true
-                    styleActiveLine: true
-                    gutters: ['CodeMirror-lint-markers']
-                    lint: true
+                  type: textarea
+                  label: Beschreibung 
                 .url:
                   type: text
                   label: URL
