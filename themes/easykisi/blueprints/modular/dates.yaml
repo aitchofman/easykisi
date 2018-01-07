@@ -4,7 +4,7 @@ title: Dates
 form:
   fields:
     tabs:
-      type: taps
+      type: tabs
       content:
          fields:
             header.dates:
