@@ -702,22 +702,14 @@
     heroTimeLine
     .add({
         targets:'#box1',
-        loop:true,
-        translateX: {
-            value: 2,
-            duration: 800
-          },
-        rotate: {
-            value: 3,
-            duration: 1800,
-            easing: 'easeInOutSine'
-          },
-          scale: {
-            value: 2,
-            duration: 1600,
-            delay: 800,
-            easing: 'easeInOutQuart'
-          },
+  translateX: [
+    { value: 100, duration: 1200 },
+    { value: 0, duration: 800 }
+  ],
+  rotate: '1turn',
+  backgroundColor: '#FFF',
+  duration: 2000,
+  loop: true
         })
     .add({
        
