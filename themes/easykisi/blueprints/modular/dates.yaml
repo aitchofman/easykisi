@@ -19,22 +19,7 @@ form:
                 header.template:
                   default: modular/dates
                   '@data-options': '\Grav\Common\Page\Pages::modularTypes'
-        features:
-          type: tab
-          title: Dates
+        content:
           fields:
-            header.features:
-              name: features
-              type: list
-              label: Features
-
-              fields:
-                .icon:
-                  type: text
-                  label: Icon
-                .header:
-                  type: text
-                  label: Header
-                .text:
-                  type: text
-                  label: Text
+            uploads:
+              label: Page Media (first one will be displayed next to your content)
