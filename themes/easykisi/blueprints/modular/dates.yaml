@@ -9,13 +9,11 @@ form:
       fields:
         gallery:
           type: tab
-          title: Termine
-
+          title: Termined
           fields:
-            header.features:
+            header.dates:
               name: features
               type: list
-              label: Features
               fields:
                 .icon:
                   type: text
