@@ -9,4 +9,15 @@
     .container {
         position: absolute;
     }
+
+    p {
+        width: 200px;
+        z-index:10;
+    }
+    svg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+    }
 }

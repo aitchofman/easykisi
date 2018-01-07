@@ -13,6 +13,18 @@
   position: absolute;
 }
 
+#kisi p {
+  width: 200px;
+  z-index: 10;
+}
+
+#kisi svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+}
+
 #instagram {
   background-color: #348afc;
 }
