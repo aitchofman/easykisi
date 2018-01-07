@@ -2,6 +2,12 @@
   position: relative;
 }
 
+#kisi .box {
+  visibility: visible;
+  animation-duration: 1500ms;
+  animation-iteration-count: infinite;
+}
+
 #kisi svg {
   width: 100%;
   height: 100%;
