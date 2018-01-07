@@ -5,6 +5,25 @@ form:
   fields:
     tabs:
       fields:
+        dates:
+          fields:
+            type: tab
+            fields:
+            header.features:
+              name: features
+              type: list
+              label: Dates
+
+              fields:
+                .icon:
+                  type: text
+                  label: Icon
+                .header:
+                  type: text
+                  label: Header
+                .text:
+                  type: text
+                  label: Text
         advanced:
           fields:
             columns:
