@@ -15,9 +15,14 @@ form:
               name: features
               type: list
               fields:
-                .icon:
+                .titel:
                   type: text
-                  label: Icon
+                  label: Titel
+                .date:
+                  type: datetime
+                  label: PLUGIN_ADMIN.DATE
+                  toggleable: true
+                  help: PLUGIN_ADMIN.DATE_HELP
                 .description:
                   classes: frontmatter
                   type: editor
