@@ -1,6 +1,6 @@
 ---
 menu: Musik
-titel: Soundcloud
+title: Soundcloud
 ---
 
 # Why do we use it?  
