@@ -1,52 +1,33 @@
-title: Dates
+title: Gallery
+'@extends':
+    type: default
+    context: blueprints://pages
 
 form:
   fields:
     tabs:
-      fields:
-        advanced:
-          fields:
-            columns:
-              fields:
-                column1:
-                  fields:
-                    name:
-                      default: modular/dates
-                      '@data-options': '\Grav\Common\Page\Pages::modularTypes'
-            overrides:
-              fields:
-                header.template:
-                  default: modular/dates
-                  '@data-options': '\Grav\Common\Page\Pages::modularTypes'
-        content:
-          fields:
-            uploads:
-              label: Page Media (first one will be displayed next to your content)
-            header.image_align:
-              type: select
-              label: Image position
-              classes: fancy
-              default: left
-              options:
-                'left': 'Left'
-                'right': 'Right'
-        dates:
-          fields:
-            type: tab
-            title: Dates
-            fields:
-            header.dates:
-              name: features
-              type: list
-              label: Dates
+      type: tabs
+      active: 1
 
-              fields:
-                .icon:
-                  type: text
-                  label: Icon
-                .header:
-                  type: text
-                  label: Header
-                .text:
-                  type: text
-                  label: Text
+      fields:
+        gallery:
+          type: tab
+          title: Gallery
+
+          fields:
+            header.an_example_text_field:
+              type: text
+              label: Add a number
+              default: 5
+              validate:
+                required: true
+                type: int
+
+            header.an_example_select_box:
+              type: select
+              label: Select one of the following
+              default: one
+              options:
+                one: One
+                two: Two
+                three: Three
