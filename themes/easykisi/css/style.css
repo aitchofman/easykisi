@@ -6,15 +6,11 @@
   position: absolute;
   left: 0;
   top: 0;
-  z-index: -1;
+  z-index: 1;
 }
 
 #kisi .container {
   position: absolute;
-}
-
-#kisi p {
-  width: 200px;
   z-index: 10;
 }
 
