@@ -1,8 +1,12 @@
 #kisi {
     position: relative;
-
-    .container,
     svg {
-        // position: absolute;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+    }
+    .container {
+        position: absolute;
     }
 }
