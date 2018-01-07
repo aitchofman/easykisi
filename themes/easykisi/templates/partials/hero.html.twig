@@ -698,11 +698,18 @@
     </div> #}
 </div>
 <script>
-    anime({
+    var heroTimeLine = anime.timeline();
+
+    heroTimeLine
+    .add({
+            targets: '#box1',
+            translateX: ['-500px', '0px'],
+            easing: 'easeInOutQuad'
+        })
+    .add({
         targets: '#box1',
         loop: true,
-        translateX: ['-500px', '0px'],
-        opacity: ['0', '1'],
+        scale: ['*=1.5', 1],
         easing: 'easeInOutQuad'
     });
 </script>
