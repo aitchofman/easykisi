@@ -3,15 +3,16 @@
 }
 
 #kisi svg {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 1;
+  width: 100%;
+  height: 100%;
 }
 
 #kisi .container {
   position: absolute;
-  z-index: 10;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
 }
 
 #instagram {
