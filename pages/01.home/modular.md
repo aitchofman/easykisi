@@ -1,7 +1,5 @@
 ---
-title: One Page Demo Site
 menu: Home
-show_onpage_menu: true
 
 content:
     items: '@self.modular'
@@ -13,4 +11,5 @@ content:
             - _instagram
             - _soundcloud
             - _history
+            - _dates
 ---
