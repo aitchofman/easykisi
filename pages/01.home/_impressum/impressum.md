@@ -1,6 +1,6 @@
 ---
 menu: Impressum
-titel: Impressum
+title: Impressum
 visible: false
 ---
 
