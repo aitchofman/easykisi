@@ -1,11 +1,10 @@
-<div class="container">
-
-    <div class="text-light bg-dark" id="impressum" data-children=".item">
+<div class="container text-light bg-dark">
+    <div id="exampleAccordion" data-children=".item">
         <div class="item">
-            <a data-toggle="collapse" data-parent="#impressum" href="#impressumContent" role="button" aria-expanded="true" aria-controls="impressum">
+            <a data-toggle="collapse" data-parent="#exampleAccordion" href="#exampleAccordion2" role="button" aria-expanded="false" aria-controls="exampleAccordion2">
                 {{ page.title }}
             </a>
-            <div id="impressumContent" class="collapse show" role="tabpanel">
+            <div id="exampleAccordion2" class="collapse" role="tabpanel">
                 <p class="mb-3">
                     {{ content }}
                 </p>
