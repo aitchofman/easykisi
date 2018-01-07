@@ -35,9 +35,20 @@
 }
 
 #openair {
-  background: url(/user/themes/easykisi/images/openair.svg) no-repeat center center;
-  height: 65vw;
-  background-size: cover;
+  position: relative;
+}
+
+#openair svg {
+  width: 100%;
+  height: 100%;
+}
+
+#openair .container {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
 }
 
 #contact {
