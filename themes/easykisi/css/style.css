@@ -1,10 +1,10 @@
 #kisi {
-  background-image: url(/user/themes/easykisi/images/hero.svg);
-  background-repeat: no-repeat;
-  background-position-x: center;
-  background-position-y: center;
-  height: 65vw;
-  background-size: cover;
+  position: relative;
+}
+
+#kisi .container,
+#kisi svg {
+  position: absolute;
 }
 
 #instagram {
