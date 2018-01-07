@@ -1,3 +1,12 @@
-<div id="impressum">
-    {{ content }}
+<div class="text-light bg-dark" id="impressum" data-children=".item">
+    <div class="item">
+        <a data-toggle="collapse" data-parent="#exampleAccordion" href="#impressumContent" role="button" aria-expanded="true" aria-controls="exampleAccordion1">
+           {{ page.header }}
+        </a>
+        <div id="impressumContent" class="collapse show" role="tabpanel">
+            <p class="mb-3">
+                {{ content }}
+            </p>
+        </div>
+    </div>
 </div>
