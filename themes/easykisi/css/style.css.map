@@ -8,7 +8,8 @@
         "../scss/modular/_soundcloud.scss",
         "../scss/modular/_history.scss",
         "../scss/modular/_openair.scss",
-        "../scss/modular/_contact.scss"
+        "../scss/modular/_contact.scss",
+        "../scss/modular/_impressum.scss"
     ],
     "names": [],
     "file": "style.css"
