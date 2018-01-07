@@ -699,17 +699,27 @@
 </div>
 <script>
     var heroTimeLine = anime.timeline();
-
     heroTimeLine
     .add({
-            targets: '#box1',
-            translateX: ['-500px', '0px'],
-            easing: 'easeInOutQuad'
+        targets:'box1',
+        translateX: {
+            value: 250,
+            duration: 800
+          },
+          rotate: {
+            value: 360,
+            duration: 1800,
+            easing: 'easeInOutSine'
+          },
+          scale: {
+            value: 2,
+            duration: 1600,
+            delay: 800,
+            easing: 'easeInOutQuart'
+          },
         })
     .add({
-        targets: '#box1',
-        loop: true,
-        scale: ['+=.3', 1],
-        easing: 'easeInOutQuad'
+       
     });
+    
 </script>
