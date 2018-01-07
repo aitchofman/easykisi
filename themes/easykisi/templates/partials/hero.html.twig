@@ -699,19 +699,17 @@
 </div>
 <script>
     anime({
-        targets:'#box1',
-        translateX: [
-            { value: 10, duration: 1200 },
-            { value: 0, duration: 800 },
-            { value: -10, duration: 900 },
-        ],
-        scale : [
-            { value: 1.02, duration: 400 },
-            { value: 1, duration: 800 },
-            { value: 1.04, duration: 500 },
-        ],
-        easing: 'easeInOutQuart',
+        targets: '#box1',
+        scaleX: [{
+            value: 1
+        }],
+        scale3d: [{
+            value: [1.05, 1.05, 1.05],
+            easing: 'easeOutExpo'
+        }],
+        scaleX: [{
+            value: 1
+        }],
         loop: true
     })
-    
 </script>
