@@ -4,16 +4,15 @@ form:
   fields:
     tabs:
       type: tabs
-      active: 1
-
       fields:
-        gallery:
+        Dates:
           type: tab
           title: Termine
           fields:
             header.dates:
               name: features
               type: list
+              style: vertical
               fields:
                 .titel:
                   type: text
