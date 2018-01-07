@@ -1,3 +1,24 @@
+@keyframes shake2 {
+    0%,to {
+        opacity: 0.01;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+
+    10%,30%,50%,70%,90% {
+        -webkit-transform: translate3d(-10px,0,0);
+        transform: translate3d(-10px,0,0)
+    }
+
+    20%,40%,60%,80% {
+        -webkit-transform: translate3d(10px,0,0);
+        transform: translate3d(10px,0,0)
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 #kisi {
     position: relative;
 
@@ -10,7 +31,9 @@
         animation-delay: 2s;
         animation-duration: 2s;
     }
+
     .box{
+        animation: shake2;
         animation-delay: 3s;
         animation-duration: 1500ms;
         animation-iteration-count: infinite;
