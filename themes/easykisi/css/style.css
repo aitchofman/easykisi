@@ -2,11 +2,6 @@
   position: relative;
 }
 
-#kisi .container,
-#kisi svg {
-  position: absolute;
-}
-
 #instagram {
   background-color: #348afc;
 }
