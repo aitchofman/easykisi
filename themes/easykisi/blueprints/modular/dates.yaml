@@ -9,7 +9,7 @@ form:
       fields:
         gallery:
           type: tab
-          title: Termined
+          title: Termine
           fields:
             header.dates:
               name: features
@@ -18,9 +18,20 @@ form:
                 .icon:
                   type: text
                   label: Icon
-                .header:
+                .description:
+                  classes: frontmatter
+                  type: editor
+                  label: PLUGIN_ADMIN.FRONTMATTER
+                  autofocus: true
+                  codemirror:
+                    mode: 'yaml'
+                    indentUnit: 4
+                    autofocus: true
+                    indentWithTabs: false
+                    lineNumbers: true
+                    styleActiveLine: true
+                    gutters: ['CodeMirror-lint-markers']
+                    lint: true
+                .url:
                   type: text
-                  label: Header
-                .text:
-                  type: text
-                  label: Text
+                  label: URL
