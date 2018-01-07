@@ -1,4 +1,4 @@
-title: Gallery
+title: Termine
 
 form:
   fields:
@@ -9,25 +9,23 @@ form:
       fields:
         gallery:
           type: tab
-          title: Gallery
+          title: Termine
 
           fields:
-            header.an_example_text_field:
-              type: text
-              label: Add a number
-              default: 5
-              validate:
-                required: true
-                type: int
-
-            header.an_example_select_box:
-              type: select
-              label: Select one of the following
-              default: one
-              options:
-                one: One
-                two: Two
-                three: Three
+            header.features:
+              name: features
+              type: list
+              label: Features
+              fields:
+                .icon:
+                  type: text
+                  label: Icon
+                .header:
+                  type: text
+                  label: Header
+                .text:
+                  type: text
+                  label: Text
 
             route:
               type: select
