@@ -1,33 +1,54 @@
-title: Gallery
-'@extends':
-    type: default
-    context: blueprints://pages
+title: Dates
+'@extends': default
 
 form:
   fields:
     tabs:
-      type: tabs
-      active: 1
-
+      active: 3
       fields:
-        gallery:
-          type: tab
-          title: Gallery
-
+        advanced:
           fields:
-            header.an_example_text_field:
-              type: text
-              label: Add a number
-              default: 5
-              validate:
-                required: true
-                type: int
-
-            header.an_example_select_box:
+            columns:
+              fields:
+                column1:
+                  fields:
+                    name:
+                      default: modular/dates
+                      '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+            overrides:
+              fields:
+                header.template:
+                  default: modular/dates
+                  '@data-options': '\Grav\Common\Page\Pages::modularTypes'
+        content:
+          fields:
+            uploads:
+              label: Page Media (first one will be displayed next to your content)
+            header.image_align:
               type: select
-              label: Select one of the following
-              default: one
+              label: Image position
+              classes: fancy
+              default: left
               options:
-                one: One
-                two: Two
-                three: Three
+                'left': 'Left'
+                'right': 'Right'
+        dates:
+          fields:
+            type: tab
+            title: Dates
+            fields:
+            header.dates:
+              name: features
+              type: list
+              label: Dates
+
+              fields:
+                .icon:
+                  type: text
+                  label: Icon
+                .header:
+                  type: text
+                  label: Header
+                .text:
+                  type: text
+                  label: Text
