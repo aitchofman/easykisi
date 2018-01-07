@@ -698,5 +698,16 @@
     </div> #}
 </div>
 <script>
-
+        var scene1 = new ScrollMagic.Scene({
+            triggerElement: "#kisi",
+            duration: 100// controlled by scroll pixels of vertical scroll
+            //duration: window.outerWidth
+        })
+            .setTween("#sun", 1, {
+                left: window.innerWidth,
+                backgroundColor: 'red'
+                }) // trigger a TweenMax.to tween
+     
+            .addIndicators() // add indicators (requires plugin)
+            .addTo(controller);
 </script>
