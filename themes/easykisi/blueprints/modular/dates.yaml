@@ -8,8 +8,9 @@ form:
         dates:
           fields:
             type: tab
+            title: Dates
             fields:
-            header.features:
+            header.dates:
               name: features
               type: list
               label: Dates
