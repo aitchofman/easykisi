@@ -1,7 +1,12 @@
 <div id="dates">
-    {% for date in page.header.dates %}
-        <div class="date">
-            {{ date.titel}}
-        </div>
+    {% for date in page.header.dates %} 
+        {% if date(date.date) < date() %} 
+            <div class="date">
+                {{ date.titel }} 
+                {{ date.date }} 
+                {{ date.description }} 
+                {{ date.url }}
+            </div>
+        {% endif %} 
     {% endfor %}
 </div>
