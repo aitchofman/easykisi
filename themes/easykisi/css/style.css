@@ -19,6 +19,11 @@
   background-color: #348afc;
 }
 
+#dates {
+  background-color: #0e86f0;
+  height: 65vw;
+}
+
 #soundcloud {
   background: url(/user/themes/easykisi/images/soundcloud.svg) no-repeat center center;
   height: 65vw;
