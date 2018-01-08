@@ -29,6 +29,7 @@
         {% do assets.addJs('theme://js/TweenMax.js', 96) %}
         {% do assets.addJs('theme://js/wow.min.js', 99) %}
         {% do assets.addJs('theme://js/anime.min.js', 98) %}
+        {% do assets.addJs('theme://js/custom.js', 90) %}
     {% endblock %}
     {{ assets.js() }}
 {% endblock head%}
@@ -65,7 +66,7 @@
 <script>
 $(function () {
     $(document).ready(function() {
-        new WOW().init();
+        // new WOW().init();
     });
 });
 </script>
