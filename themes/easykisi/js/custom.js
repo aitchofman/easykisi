@@ -2,8 +2,16 @@ $(document).ready(function() {
     
     var controller = new ScrollMagic.Controller();
     
+
+
     var sun = TweenMax.set($('#sun'),{
         className: "animated pulse infinite"
+    });
+
+    var tent1 = $('#tent1');
+    var tent1_tween = TweenMax.to(tent1, 1, {
+        opacity: 0,
+        y:250
     });
     
     var trailer = TweenMax.set($('#trailer'),{
@@ -24,6 +32,7 @@ $(document).ready(function() {
     })
     .setTween(sun)
     .setTween(trailer)
+    .setTween(tent1_tween)
     .setTween(box1)
     .setTween(box2)
     .addTo(controller);
