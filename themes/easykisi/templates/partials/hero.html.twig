@@ -699,10 +699,15 @@
 </div>
 <script>
     var controller = new ScrollMagic.Controller();
+
+    var setMultipleClasses = TweenMax.set($('#box1'), {
+        className: "animated shake infinite"
+    });
+    
     var heroScrene = new ScrollMagic.Scene({
-            triggerElement: '#kisi'
-        })
-        .setClassToggle('#box1', 'shake')
+        triggerElement: '#kisi'
+    })
+    .setTween(setMultipleClasses)
         .addTo(controller);
     /* anime({
             targets: '#box1',
