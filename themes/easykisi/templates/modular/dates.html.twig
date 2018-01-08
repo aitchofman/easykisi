@@ -1,3 +1,7 @@
 <div id="dates">
-    {{ content }}
+    {% for feature in page.header.dates %}
+        <div class="date">
+            {{ header.titel}}
+        </div>
+    {% endfor %}
 </div>

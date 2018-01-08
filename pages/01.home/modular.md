@@ -9,6 +9,7 @@ content:
         custom:
             - _openair
             - _instagram
+            - _dates
             - _soundcloud
             - _history
             - _dates

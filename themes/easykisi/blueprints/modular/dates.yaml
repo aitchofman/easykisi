@@ -10,7 +10,7 @@ form:
           title: Termine
           fields:
             header.dates:
-              name: features
+              name: dates
               type: list
               style: vertical
               fields:

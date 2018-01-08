@@ -706,14 +706,15 @@
     var box2 = TweenMax.set($('#box2'), {
         className: "animated slideInUp"
     });
-    
+
     var heroScrene = new ScrollMagic.Scene({
-        triggerElement: '#sun'
-    })
-    .setTween(box1)
-    .setTween(box2)
-    .addIndicators()
-    .addTo(controller);
+            triggerElement: '#sun',
+            duration: '100%'
+        })
+        .setTween(box1)
+        .setTween(box2)
+        .addIndicators()
+        .addTo(controller);
     /* anime({
             targets: '#box1',
             scaleX: [{
