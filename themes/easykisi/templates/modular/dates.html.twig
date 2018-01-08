@@ -1,4 +1,5 @@
 <div id="dates">
+    <h2 class="text-center"> {{ page.title }}</h2>
     {% for date in page.header.dates %} 
         {% if date(date.date) > date() %} 
             <div class="date">
