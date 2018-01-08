@@ -15,6 +15,6 @@ dates:
         date: '24-01-2018 11:38'
         description: huhu
         url: test
-title: Daten
+title: Termine
 ---
 
