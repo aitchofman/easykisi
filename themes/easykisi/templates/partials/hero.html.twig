@@ -704,9 +704,14 @@
         className: "animated pulse infinite"
     })
 
+    var trailer = TweenMax.set($('#trailer'),{
+        className = "animated lightSpeedIn"
+    });
+
     var box1 = TweenMax.set($('#box1'), {
         className: "animated fadeIn"
     });
+
     var box2 = TweenMax.set($('#box2'), {
         className: "animated slideInUp"
     });
@@ -716,6 +721,7 @@
             duration: '100%'
         })
         .setTween(sun)
+        .setTween(trailer)
         .setTween(box1)
         .setTween(box2)
         .addIndicators()
