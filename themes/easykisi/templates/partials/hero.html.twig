@@ -275,7 +275,7 @@
         </defs>
         <title>kisi</title>
         <rect class="cls-2" x="-6" y="-13" width="1935" height="838" />
-        <g>
+        <g id="sun">
             <circle class="cls-3" cx="212.92" cy="207.76" r="158.11" />
             <circle class="cls-4" cx="212.92" cy="207.76" r="186.08" />
             <circle class="cls-5" cx="212.92" cy="207.76" r="130.78" />
@@ -700,15 +700,20 @@
 <script>
     var controller = new ScrollMagic.Controller();
 
-    var setMultipleClasses = TweenMax.set($('#box1'), {
+    var box1 = TweenMax.set($('#box1'), {
         className: "animated fadeIn"
+    });
+    var box2 = TweenMax.set($('#box2'), {
+        className: "animated slideInUp"
     });
     
     var heroScrene = new ScrollMagic.Scene({
-        triggerElement: '#kisi'
+        triggerElement: '#sun'
     })
-    .setTween(setMultipleClasses)
-        .addTo(controller);
+    .setTween(box1)
+    .setTween(box2)
+    .addIndicators()
+    .addTo(controller);
     /* anime({
             targets: '#box1',
             scaleX: [{
