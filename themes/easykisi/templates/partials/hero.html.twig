@@ -699,6 +699,10 @@
 </div>
 <script>
     var controller = new ScrollMagic.Controller();
+    
+    var sun = TweenMax.set($('#sun'),{
+        className: "animated pulse infinite"
+    })
 
     var box1 = TweenMax.set($('#box1'), {
         className: "animated fadeIn"
@@ -708,9 +712,10 @@
     });
 
     var heroScrene = new ScrollMagic.Scene({
-            triggerElement: '#sun',
+            triggerElement: '#kisi',
             duration: '100%'
         })
+        .setTween(sun)
         .setTween(box1)
         .setTween(box2)
         .addIndicators()
