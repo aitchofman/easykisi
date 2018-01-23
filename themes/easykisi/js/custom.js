@@ -1,4 +1,15 @@
 $(document).ready(function() {
+
+
+
+    $(window).scroll(function() {
+        if( $(this).scrollTop() > $('#kisi') ) {
+         $(".main-nav").addClass("fixed-top");
+       } else {
+         $(".navbar").removeClass("fixed-top");
+       }
+     });
+
     
     var controller = new ScrollMagic.Controller();
     
