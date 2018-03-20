@@ -9,8 +9,9 @@ content:
         custom:
             - _openair
             - _instagram
-            - _dates
             - _soundcloud
             - _history
+            - _maker
+            - _video
             - _dates
 ---
