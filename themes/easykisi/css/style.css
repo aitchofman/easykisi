@@ -28,6 +28,7 @@ body {
 }
 
 #dates {
+  display: none;
   background-color: #0e86f0;
   height: 65vw;
 }
