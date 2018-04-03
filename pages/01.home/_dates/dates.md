@@ -1,4 +1,6 @@
 ---
+routable: false
+visible: false
 dates:
     -
         titel: 'Hallo Welt'
@@ -15,6 +17,5 @@ dates:
         date: '24-01-2018 11:38'
         description: huhu
         url: test
-title: Termine
 ---
 
