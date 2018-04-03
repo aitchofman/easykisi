@@ -1,4 +1,5 @@
 ---
+title: Dates
 routable: false
 visible: false
 dates:
