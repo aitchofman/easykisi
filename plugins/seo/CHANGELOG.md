@@ -1,3 +1,48 @@
+# v2.3.4
+## 03/19/2018
+1. [](#fix)
+    * Fixed whoops on opengraph image
+    
+# v2.3.2
+## 01/26/2018
+1. [](#fix)
+    * Fixed opengraph and twitter error
+    * Fixed facebook default not fetched from plugin configuration
+
+
+# v2.3.1
+## 01/26/2018
+1. [](#fix)
+    * Fixed whoops on twitter image
+    
+# v2.3.0
+## 01/26/2018
+1. [](#fix)
+    * Fixed tag not stripped from description
+    * Added areaserved to organization and restaurant microdata
+    * Fixed event date problem
+
+# v2.2.0
+## 01/26/2018
+1. [](#new)
+    * Fixed script and style tags in page content causing problem
+    * Few languages fixes
+    * Re-added date modified and date published that mysteriously disappeared
+    
+# v2.1.9
+## 01/09/2018
+1. [](#new)
+    * Fixed Changelog causing trouble with GPM
+    
+# v2.1.8
+## 01/08/2018
+1. [](#new)
+    * Added Nederland translation
+    * Fixed founder field causing crash when empty 
+    * Fixed default twitter image not being displayed
+    * Fixed default values for opengraph and twitter
+    * Small changes in microdata blueprints
+
 # v2.1.7
 ## 12/17/2017
 1. [](#new)
