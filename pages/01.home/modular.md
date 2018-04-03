@@ -14,4 +14,5 @@ content:
             - _maker
             - _video
             - _dates
+            - _impressum
 ---
