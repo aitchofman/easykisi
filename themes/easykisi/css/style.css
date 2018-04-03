@@ -6,6 +6,12 @@ body {
   border: 3px solid #333333;
 }
 
+p {
+  font-size: 22px;
+  letter-spacing: 2px;
+  line-height: 24px;
+}
+
 .navbar {
   border-left: 0px;
   border-right: 0px;
