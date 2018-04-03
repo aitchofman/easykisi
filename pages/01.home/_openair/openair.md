@@ -2,5 +2,6 @@
 title: OPEN AIR OPEN END 
 menu: DER EASYKISI
 ---
+Der easykisi ist eine mobile Diskothek. Eine fahrbare Bühne auf zwei Rädern. Den Caravan haben die Ghostbastlers 2016 von einem Wohnanhänger zu einem musikalischen Kunstobjekt umgewandelt. jede Menge künstlerische Details, Lichteffekte und ein von weitem sichtbares Leuchtschild machen den Wagen zu einem einzigartigen Hingucker.
 
-DER EASYKISI IST EINE MOBILE DISKOTHEK. EINE FAHRBARE BÜHNE AUF ZWEI RÄDERN. DEN CARAVAN HABEN DIE GHOST- BASTLERS 2016 VON EINEM WOHNANHÄNGER ZU EINEM MUSIKALISCHEN KUNSTOBJEKT UMGEWANDELT. JEDE MENGE KÜNSTLERISCHE DETAILS, LICHTEFFEKTE UND EIN VON WEITEM SICHTBARES LEUCHTSCHILD MACHEN DEN WAGEN ZU EINEM EINZIGARTIGEN HINGUCKER. BESPIELT WIRD DER EASY KISI VON ANGESTAMMTEN DISKJOCKEYS MIT EINEM GENREMIX VON SOUL UND FUNK, ÜBER HIPHOP UND DISCOHITS BIS HIN ZU AFROBEAT UND PSYCHEDELISCHEN ROCK.
+Bespielt wird der Easy Kisi von angestammten Diskjockeys mit einem Genremix von Soul und Funk, über HipHop und Discohits bis hin zu Afrobeat und Psychedelischen Rock.
