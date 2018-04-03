@@ -72,6 +72,6 @@ body {
 }
 
 .nav-link {
-  font-size: 46px;
+  font-size: 46px !important;
 }
 /*# sourceMappingURL=style.css.map */
