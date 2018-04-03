@@ -2,6 +2,10 @@ body {
   font-family: 'Amatic SC', cursive;
 }
 
+.bg-light {
+  border: 3px solid #333333;
+}
+
 .nav-link {
   font-size: 36px;
 }
