@@ -43,7 +43,7 @@ form:
                             header.twitterenable:
                               type: toggle
                               label: PLUGIN_ADMIN.ENABLED
-                              default: 1
+                              config-default@: plugins.seo.twitter_default
                               highlight: 1
                               help: PLUGIN_ADMIN.ENABLED_HELP
                               options:
@@ -129,25 +129,26 @@ form:
                             header.article.headline:
                               type: text
                               label: PLUGIN_SEO.HEADLINE
-                              disabled: false
                               placeholder: PLUGIN_SEO.ARTICLE_PLACEHOLDER
-                              field_classes: togglearticle
+                            header.article.datePublished:
+                              type: datetime
+                              label: PLUGIN_SEO.DATE_PUBLISHED
+                            header.article.dateModified:
+                              type: datetime
+                              label: PLUGIN_SEO.DATE_MODIFIED
                             header.article.description:
                               type: textarea
                               label: PLUGIN_SEO.ARTICLE_DESCRIPTION
                               placeholder: PLUGIN_SEO.ARTICLE_DESC_PLACEHOLDER
-                              disabled: false
                               field_classes: togglearticle
                             header.article.image_url:
                               type: mediapicker
                               label: PLUGIN_SEO.ARTICLE_IMAGE
                               placeholder: Please click to open the mediapicker
-                              disabled: false
                               field_classes: togglearticle
                             header.article.author:
                               type: text
                               label: PLUGIN_SEO.ARTICLE_AUTHOR
-                              disabled: false
                               field_classes: togglearticle
                             header.article.publisher_logo_url:
                               type: mediapicker
@@ -158,7 +159,6 @@ form:
                             header.article.publisher_name:
                               type: text
                               label: PLUGIN_SEO.PUBLISHER_NAME
-                              disabled: false
                               field_classes: togglearticle
                     header.musicevent_condition:
                       type: conditional
@@ -318,6 +318,18 @@ form:
                             header.orga.name:
                               type: text
                               label: Organization name
+                            header.orga.description:
+                              type: text
+                              label: Organization description
+                            header.orga.legalname:
+                              type: text
+                              label: Registered company name
+                            header.orga.taxid:
+                              type: text
+                              label: The Tax / Fiscal ID of the organization or person
+                            header.orga.vatid:
+                              type: text
+                              label: The Value-added Tax ID of the organization or person
                             header.orga.streetaddress:
                               type: text
                               label: Organization street
@@ -330,6 +342,16 @@ form:
                             header.orga.zipcode:
                               type: text
                               label: Organization Zip Code
+                            header.orga.areaserved:
+                              type: list
+                              label: Area servered
+                              btnLabel: Add a location
+                              fields:
+                                .area:
+                                  type: text
+                                  style: vertical
+                                  label: The geographic area where a service or offered item is provided.
+                                  placeholder: one location per line
                             header.orga.phone:
                               type: text
                               label: Organization Phone
@@ -361,15 +383,18 @@ form:
                             header.orga.reviewCount:
                               type: number
                               label: Number of reviews you used for calculating your rating.
+                              size: small
                             header.orga.openingHours:
                               type: list
                               label: Opening Hours
+                              btnLabel: Add opening hours details
                               fields:
                                 .entry:
                                   type: text
                                   style: vertical
-                                  label: Opening hours - Please write the day or a range of day (mon-fri) followed by a space and the opening hours"
-                                  placeholder: "Exemple: Mon-Fri 09:00-18:00 or Saturday 09:00-15:00"
+                                  label: Opening hours - Please write the two character day or a range of day (mo-fr) followed by a space and the opening hours"
+                                  placeholder: "Exemple: Mo-Fr 09:00-18:00 or Saturday 09:00-15:00"
+
                             header.orga.foundingDate:
                               type: text
                               label: Founding year
@@ -400,8 +425,46 @@ form:
                                   style: vertical
                                   label: Links to page related to this organization (social media, etc.)
                                   placeholder: "http://wikipedia.org/en/companyname"
-                              
-                              
+                            header.orga.offercatalog:
+                              type: list
+                              label: Offer Catalog
+                              btnLabel: Add offer
+                              fields:
+                                .offer:
+                                  type: text
+                                  style: vertical
+                                  label: Offer product or service
+                                  placeholder: Offer product or service
+                                .description:
+                                  type: text
+                                  style: vertical
+                                  label: Offer product or service description
+                                  placeholder: Offer product or service description
+                                .url:
+                                  type: text
+                                  style: vertical
+                                  label: Offer url
+                                  placeholder: Product or service url
+                                .image:
+                                  type: text
+                                  style: vertical
+                                  label: Offer image url
+                                  placeholder: Product or service image url
+                                .offereditem:
+                                  type: list
+                                  label: Offer Item
+                                  btnLabel: Add offer item
+                                  fields:
+                                    .name:
+                                      type: text
+                                      style: vertical
+                                      label: Offer detail
+                                      placeholder: Product or service detail
+                                    .url:
+                                      type: text
+                                      style: vertical
+                                      label: Offer detail url
+                                      placeholder: Product or service detail url
 
                     header.conditional_event:
                       type: conditional
@@ -629,6 +692,7 @@ form:
                             header.product.reviewCount:
                               type: number
                               label: Number of reviews you used for calculating your rating.
+                              size: small
                             header.product.brand:
                               type: text
                               label: Product Brand
@@ -670,6 +734,7 @@ form:
                                     'http://schema.org/OnlineOnly': PLUGIN_SEO.ONLINEONLY
                                 .offer_price:
                                   type: text
+                                  size: small
                                   label: Price of the product 
                                   placeholder: "e.g: 19.99 (no currency symbol)"
                                 .offer_validFrom:
@@ -778,7 +843,7 @@ form:
                               type: toggle
                               label: PLUGIN_SEO.FACEBOOK_ENABLE
                               id: facebookenable
-                              default: 1
+                              config-default@: plugins.seo.facebook_default
                               highlight: 1
                               options:
                                 1: PLUGIN_ADMIN.YES

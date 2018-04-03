@@ -1,6 +1,6 @@
 <?php
 /**
- * SEO v2.1.0
+ * SEO v2.3.2
  *
  * This plugin adds an SEO Tab to every pages for managing SEO data.
  *
@@ -71,27 +71,67 @@ class seoPlugin extends Plugin
         return $array;
     }
     private function seoGetimage($imageurl){
-
-    $imagedata = [];
-    $pattern = '~((\/[^\/]+)+)\/([^\/]+)~';
+        $imagedata = [];
+        $pattern = '~((\/[^\/]+)+)\/([^\/]+)~';
         $replacement = '$1';
-    $fixedurl = preg_replace($pattern, $replacement, $imageurl);
-    $imagename = preg_replace($pattern, '$3', $imageurl);
-    $imgarray = $this->grav['page']->find($fixedurl)->media()->images();
-    $keyimages = array_keys($imgarray);
-    $imgkey = array_search($imagename, $keyimages);
-    $keyvalue = $keyimages[$imgkey];
-    //$imgkey = array_shift($imgarray);
-    $imgobject = $imgarray[$keyvalue];
-     
-    $im = getimagesize($imgobject->path());
-    $imagedata = [
-    'width' => "$im[0]",
-    'height' => "$im[1]",
-    'url' => $imgobject->url(),
-    ];
-    return $imagedata;
-}
+        $fixedurl = preg_replace($pattern, $replacement, $imageurl);
+        $imagename = preg_replace($pattern, '$3', $imageurl);
+        $imgarray = $this->grav['page']->find($fixedurl)->media()->images();
+        $keyimages = array_keys($imgarray);
+        $imgkey = array_search($imagename, $keyimages);
+        $keyvalue = $keyimages[$imgkey];
+        //$imgkey = array_shift($imgarray);
+        $imgobject = $imgarray[$keyvalue];
+         
+        $im = getimagesize($imgobject->path());
+        $imagedata = [
+        'width' => "$im[0]",
+        'height' => "$im[1]",
+        'url' => $imgobject->url(),
+        ];
+        return $imagedata;
+    }
+    private function cleanMarkdown($text){
+        $text=strip_tags($text);
+        $rules = array (
+            '/{%[\s\S]*?%}[\s\S]*?/'                 => '',    // remove twig include
+            '/<style(?:.|\n|\r)*?<\/style>/'         => '',    // remove style tags
+            '/<script[\s\S]*?>[\s\S]*?<\/script>/'   => '',  // remove script tags
+            '/(#+)(.*)/'                             => '\2',  // headers
+            '/(&lt;|<)!--\n((.*|\n)*)\n--(&gt;|\>)/' => '',    // comments
+            '/(\*|-|_){3}/'                          => '',    // hr
+            '/!\[([^\[]+)\]\(([^\)]+)\)/'            => '',    // images
+            '/\[([^\[]+)\]\(([^\)]+)\)/'             => '\1',  // links
+            '/(\*\*|__)(.*?)\1/'                     => '\2',  // bold
+            '/(\*|_)(.*?)\1/'                        => '\2',  // emphasis
+            '/\~\~(.*?)\~\~/'                        => '\1',  // del
+            '/\:\"(.*?)\"\:/'                        => '\1',  // quote
+            '/```(.*)\n((.*|\n)+)\n```/'             => '\2',  // fence code
+            '/`(.*?)`/'                              => '\1',  // inline code
+            '/(\*|\+|-)(.*)/'                        => '\2',  // ul lists
+            '/\n[0-9]+\.(.*)/'                       => '\2',  // ol lists
+            '/(&gt;|\>)+(.*)/'                       => '\2',  // blockquotes
+            
+            
+            );
+        $text=str_replace(".\n", '.', $text);
+        $text=str_replace("\n", '. ', $text);
+        $text=str_replace('"', '', $text);
+        $text=str_replace('<p', '', $text);
+        $text=str_replace('</p>', '', $text);
+        
+        foreach ($rules as $regex => $rep) {
+            if (is_callable ( $rep)) {
+               $text = preg_replace_callback ($regex, $rep, $text);
+            } else {
+                $text = preg_replace ($regex, $rep, $text);
+            }
+        }
+        
+        
+        return substr($text,0,320);
+        // htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
+    }
     
 
     /**
@@ -133,8 +173,7 @@ class seoPlugin extends Plugin
         $route = $this->config->get('plugins.admin.route');
         $microdata = [];
         $meta = $page->metadata(null);
-
-     
+        $cleanedMarkdown = $this->cleanMarkdown($page->content());
        
         if (isset($page->header()->googletitle)) {
             $page->header()->title = $page->header()->googletitle;
@@ -144,6 +183,9 @@ class seoPlugin extends Plugin
             $meta['description']['name']      = 'description';
             $meta['description']['content']   = $page->header()->googledesc;
         
+        } else {
+            $meta['description']['name']      = 'description';
+            $meta['description']['content']   = $cleanedMarkdown;
         };
         
              /**
@@ -162,17 +204,29 @@ class seoPlugin extends Plugin
                 $meta['twitter:card']['name']      = 'twitter:card';
                 $meta['twitter:card']['property']  = 'twitter:card';
                 $meta['twitter:card']['content']   = $page->header()->twittercardoptions;
+            } else {
+                $meta['twitter:card']['name']      = 'twitter:card';
+                $meta['twitter:card']['property']  = 'twitter:card';
+                $meta['twitter:card']['content']   = 'summary_large_image';
             };
             
             if (isset($page->header()->twittertitle)) {
                 $meta['twitter:title']['name']      = 'twitter:title';
                 $meta['twitter:title']['property']  = 'twitter:title';
                 $meta['twitter:title']['content']   = $page->header()->twittertitle;
+            } else {
+                $meta['twitter:title']['name']      = 'twitter:title';
+                $meta['twitter:title']['property']  = 'twitter:title';
+                $meta['twitter:title']['content']   = $page->title() . ' | ' . $this->config->get('site.title');
             };
             if (isset($page->header()->twitterdescription)) {
                 $meta['twitter:description']['name']      = 'twitter:description';
                 $meta['twitter:description']['property']  = 'twitter:description';
                 $meta['twitter:description']['content']   = $page->header()->twitterdescription;
+            } else {
+                $meta['twitter:description']['name']      = 'twitter:description';
+                $meta['twitter:description']['property']  = 'twitter:description';
+                $meta['twitter:description']['content']   =  $cleanedMarkdown;
             };
             if (isset($page->header()->twittershareimg)) {
                 $meta['twitter:image']['name']      = 'twitter:image';
@@ -180,6 +234,15 @@ class seoPlugin extends Plugin
                 $twittershareimg = $page->header()->twittershareimg;
                 $imagedata = $this->seoGetimage($twittershareimg);
                 $meta['twitter:image']['content']   = $this->grav['uri']->base() . $imagedata['url'];
+            } elseif(!empty($page->media()->images())) {
+                
+                $meta['twitter:image']['name']      = 'twitter:image';
+                $meta['twitter:image']['property']  = 'twitter:image';
+                $imgobject = $page->media()->images();
+                $getfirst = array_shift($imgobject);
+                $firstimage = $getfirst->url();
+                //$imagedata = $this->seoGetimage($firstimage);
+                $meta['twitter:image']['content']   = $this->grav['uri']->base() . $firstimage;
             };
             $meta['twitter:url']['name']      = 'twitter:url';
             $meta['twitter:url']['property']  = 'twitter:url';
@@ -215,11 +278,11 @@ class seoPlugin extends Plugin
             if (isset($page->header()->facebookdesc)) {
                 //$meta['og:description']['name']     = 'og:description';
                 $meta['og:description']['property'] = 'og:description';
-                $meta['og:description']['content'] =  $page->header()->facebookdesc;
+                $meta['og:description']['content'] =  substr($this->cleanMarkdown($page->header()->facebookdesc),0,320);
             } else {
                // $meta['og:description']['name']     = 'og:description';
                 $meta['og:description']['property'] = 'og:description';
-                $meta['og:description']['content'] =  substr($content,0,140);
+                $meta['og:description']['content'] =  $cleanedMarkdown;
             }
             if (isset($page->header()->facebookauthor)) {
               //  $meta['article:author']['name']     = 'article:author';
@@ -232,6 +295,14 @@ class seoPlugin extends Plugin
                 $facebookimg = $page->header()->facebookimg;
                 $imagedata = $this->seoGetimage($facebookimg);
                 $meta['og:image']['content'] =  $this->grav['uri']->base() . $imagedata['url'];
+            } elseif(!empty($page->media()->images())) {
+                $meta['og:image']['property'] = 'og:image';
+                $imgobject = $page->media()->images();
+                $getfirst = array_shift($imgobject);
+                $firstimage = $getfirst->url();
+                //$imagedata = $this->seoGetimage($firstimage);
+                $meta['twitter:image']['content']   = $this->grav['uri']->base() . $firstimage;
+                $meta['og:image']['content'] =  $this->grav['uri']->base() . $firstimage;
             }
        
          }
@@ -337,8 +408,8 @@ class seoPlugin extends Plugin
                       'priceCurrency' => @$event['event_offers_priceCurrency'],
                       'url' => @$event['event_offers_url'], 
                       ],
-                  'startDate' => @date("c", strtotime($event['event_startdate'])),
-                  'endDate' => @date("c", strtotime($event['event_enddate'])),
+                  'startDate' => @date("c", strtotime($event['event_startDate'])),
+                  'endDate' => @date("c", strtotime($event['event_endDate'])),
                   'description' => @$event['event_description'],
                   
                   ];
@@ -377,7 +448,7 @@ class seoPlugin extends Plugin
         }
         if (property_exists($page->header(),'orgaenabled')){
        if ($page->header()->orgaenabled and $this->config['plugins']['seo']['organization']) {
-        if (isset($page->header()->orga['similar'])){
+        if (isset($page->header()->orga['founders'])){
         foreach ($page->header()->orga['founders'] as $founder){
                   $founderarray[] = [
                       '@type' => 'Person',
@@ -390,11 +461,50 @@ class seoPlugin extends Plugin
                       $similararray[] = $similar['sameas'];    
                      }
         }
+        if (isset($page->header()->orga['areaserved'])){
+            foreach ($page->header()->orga['areaserved'] as $areaserved){
+                      $areaservedarray[] = $areaserved['area']; 
+                     }
+        }   
         if (isset($page->header()->orga['openingHours'])){
             foreach ($page->header()->orga['openingHours'] as $hours){
                       $openingHours[] = $hours['entry'];    
                      }
         }
+        if (isset($page->header()->orga['offercatalog'])){
+            foreach ($page->header()->orga['offercatalog'] as $offer) {
+                if (array_key_exists('offereditem', $offer)) {
+                    foreach ($offer['offereditem'] as $service) {
+                        $offerarray[] = [
+                            '@type' => 'OfferCatalog',
+                            'name' => @$offer['offer'],
+                            'description' => @$offer['description'],
+                            'url' => @$offer['url'],
+                            'image' => @$offer['image'],
+                            'itemListElement' => [
+                                '@type' => 'Offer',
+                                'itemOffered' => [
+                                    '@type' => 'Service',
+                                    'name' => @$service['name'],
+                                    'url' => @$service['url'],
+                                ],
+                            ],
+                        ];
+                    }
+                } else {
+                        $offerarray[] = [
+                            '@type' => 'OfferCatalog',
+                            'name' => @$offer['offer'],
+                            'description' => @$offer['description'],
+                            'url' => @$offer['url'],
+                            'image' => @$offer['image'],
+                        ];
+                }
+            }
+        }
+
+        if (property_exists($page->header(),'orgaratingenabled')){
+
         if ($page->header()->orgaratingenabled){
         $orgarating = [
                       '@type' => 'AggregateRating',
@@ -402,10 +512,17 @@ class seoPlugin extends Plugin
                       'reviewCount' => @$page->header()->orga['reviewCount'],
                       ];
         } 
+
+        } 
         $microdata[] = [
                   '@context' => 'http://schema.org',
                   '@type' => 'Organization',
                   'name' => @$page->header()->orga['name'],
+                  'legalname' => @$page->header()->orga['legalname'],
+                  'taxid' => @$page->header()->orga['taxid'],
+                  'vatid' => @$page->header()->orga['vatid'],
+                  'areaServed' => @$areaservedarray,
+                  'description' => @$page->header()->orga['description'],
                   
                   'address' => [
                       '@type' => 'PostalAddress',
@@ -423,7 +540,8 @@ class seoPlugin extends Plugin
                   'aggregateRating' => @$orgarating,
                   'paymentAccepted' => @$page->header()->orga['paymentAccepted'],
                   'founders' => @$founderarray,
-                  'sameAs' => @$similararray
+                  'sameAs' => @$similararray,
+                  'hasOfferCatalog' => @$offerarray
                   ];
                  
                   
@@ -457,6 +575,7 @@ class seoPlugin extends Plugin
                       'streetAddress' => @$page->header()->restaurant['address_streetAddress'],
                       'postalCode' => @$page->header()->restaurant['address_postalCode'],
                       ],
+                  'areaserved' => @$areaservedarray,
                   'servesCuisine' => @$page->header()->restaurant['servesCuisine'],
                   'priceRange' => @$page->header()->restaurant['priceRange'],
                   'image' => @$restaurantimage,
@@ -517,8 +636,6 @@ class seoPlugin extends Plugin
                       
                       ]
                   ];
-            
-
        }
         }
      if (property_exists($page->header(),'articleenabled')){
@@ -614,7 +731,7 @@ class seoPlugin extends Plugin
      $newtype = $event['type'];
      if (0 === strpos($newtype, 'modular/')) {
         } else {
-                    $blueprint = $event['blueprint'];
+            $blueprint = $event['blueprint'];
         if ($blueprint->get('form/fields/tabs', null, '/')) {
             
             $blueprints = new Blueprints(__DIR__ . '/blueprints/');
@@ -626,41 +743,10 @@ class seoPlugin extends Plugin
         
     }
 
+
     public function onTwigTemplatePaths()
     {
         $this->grav['twig']->twig_paths[] = __DIR__ . '/templates';
     }
     
-
-    
-    private function cleanMarkdown($text){
-        $rules = array (
-            '/(#+)(.*)/'                             => '\2',  // headers
-            '/(&lt;|<)!--\n((.*|\n)*)\n--(&gt;|\>)/' => '',    // comments
-            '/(\*|-|_){3}/'                          => '',    // hr
-            '/!\[([^\[]+)\]\(([^\)]+)\)/'            => '',    // images
-            '/\[([^\[]+)\]\(([^\)]+)\)/'             => '\1',  // links
-            '/(\*\*|__)(.*?)\1/'                     => '\2',  // bold
-            '/(\*|_)(.*?)\1/'                        => '\2',  // emphasis
-            '/\~\~(.*?)\~\~/'                        => '\1',  // del
-            '/\:\"(.*?)\"\:/'                        => '\1',  // quote
-            '/```(.*)\n((.*|\n)+)\n```/'             => '\2',  // fence code
-            '/`(.*?)`/'                              => '\1',  // inline code
-            '/(\*|\+|-)(.*)/'                        => '\2',  // ul lists
-            '/\n[0-9]+\.(.*)/'                       => '\2',  // ol lists
-            '/(&gt;|\>)+(.*)/'                       => '\2',  // blockquotes
-        );
-        foreach ($rules as $regex => $replacement) {
-            if (is_callable ( $replacement)) {
-                $text = preg_replace_callback ($regex, $replacement, $text);
-            } else {
-                $text = preg_replace ($regex, $replacement, $text);
-            }
-        }
-        $text=str_replace(".\n", '.', $text);
-        $text=str_replace("\n", '.', $text);
-        $text=str_replace('"', '', $text);
-        return htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
-    }
-
 }
