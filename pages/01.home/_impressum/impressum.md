@@ -1,7 +1,7 @@
 ---
-menu: Impressum
 title: Impressum
-visible: false
+menu: Impressum
+routable: true
 ---
 
 # Ne artes
