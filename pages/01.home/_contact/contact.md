@@ -1,6 +1,6 @@
 ---
-title: Kontakt
-menu: Kontakt
+title: Partner
+menu: Partner
 
 form:
     name: contact
@@ -44,3 +44,11 @@ form:
         - message: Thank you for getting in touch!
         - display: thankyou
 ---
+
+Die Planung des Caravans baute auf dem alten auf, ergänzte sich aber in diversen Details — 
+Ziel war es alles schöner, komfortabler und eine Spur smarter zu machen.
+
+Dieses Ziel konnte dank zahlreicher Helfer hervorragend umgesetzt werden.
+
+Vielen Dank alle alle Beteiligten!
+
