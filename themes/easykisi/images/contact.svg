@@ -1,4 +1,5 @@
-<svg id="Group_269" data-name="Group 269" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-5.24 7560 1971.24 1200.954">
+
+<svg id="Group_269" data-name="Group 269" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-5.24 7560 1925.24 1200.954">
   <defs>
     <style>
       .cls-1, .cls-13, .cls-24, .cls-3, .cls-5, .cls-6 {
@@ -173,7 +174,7 @@
       }
     </style>
     <clipPath id="clip-path">
-      <rect class="cls-1" width="1971.24" height="163.371"/>
+      <rect class="cls-1" width="1925.24" height="163.371"/>
     </clipPath>
   </defs>
   <g id="Group_55" data-name="Group 55" transform="translate(0 7560)">
@@ -251,18 +252,6 @@
         <rect id="Rectangle_271-2" data-name="Rectangle 271" class="cls-7" width="77.364" height="14.251" transform="translate(277.214 0)"/>
         <rect id="Rectangle_272-2" data-name="Rectangle 272" class="cls-7" width="77.364" height="14.251" transform="translate(138.62 0)"/>
         <rect id="Rectangle_273-2" data-name="Rectangle 273" class="cls-7" width="77.364" height="14.251" transform="translate(0 0)"/>
-      </g>
-    </g>
-    <g transform="translate(1935.24 -7867)">
-      <rect id="Rectangle_309-3" data-name="Rectangle 309" class="cls-4" width="965.24" height="160.371" transform="translate(-5.24 7867)"/>
-      <g id="Group_227-3" data-name="Group 227" transform="translate(20.838 7939.896)">
-        <rect id="Rectangle_267-3" data-name="Rectangle 267" class="cls-7" width="77.364" height="14.251" transform="translate(831.667 0)"/>
-        <rect id="Rectangle_268-3" data-name="Rectangle 268" class="cls-7" width="77.364" height="14.251" transform="translate(693.048 0)"/>
-        <rect id="Rectangle_269-3" data-name="Rectangle 269" class="cls-7" width="77.364" height="14.251" transform="translate(554.453 0)"/>
-        <rect id="Rectangle_270-3" data-name="Rectangle 270" class="cls-7" width="77.364" height="14.251" transform="translate(415.834 0)"/>
-        <rect id="Rectangle_271-3" data-name="Rectangle 271" class="cls-7" width="77.364" height="14.251" transform="translate(277.214 0)"/>
-        <rect id="Rectangle_272-3" data-name="Rectangle 272" class="cls-7" width="77.364" height="14.251" transform="translate(138.62 0)"/>
-        <rect id="Rectangle_273-3" data-name="Rectangle 273" class="cls-7" width="77.364" height="14.251" transform="translate(0 0)"/>
       </g>
     </g>
   </g>

@@ -13,7 +13,6 @@ content:
             - _history
             - _maker
             - _video
-            - _dates
             - _contact
             - _impressum
 ---
